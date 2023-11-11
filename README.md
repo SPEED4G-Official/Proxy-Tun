@@ -3,7 +3,7 @@ bash <(curl -Ls https://raw.githubusercontent.com/SPEED4G-Official/Proxy-Tun/mai
 ```
 # Cài Đặt Tool
 Bước 1: Cài Đặt Python Trên Máy <br>
-Bước 2: Window + R -> Nhập cmd -> Enter
+Bước 2: Window + R -> Nhập cmd -> Enter <br>
 Bước 3: Chạy Các Lệnh Sau
 ```
 pip install paramiko
