@@ -205,9 +205,15 @@ elif [ "$SOK_OS" == "centos9" ]; then
     firewall-cmd --reload > /dev/null 2>&1
     fi
 fi
+GREEN='\033[0;32m'
+NC='\033[0m'
 
+echo -e "${NC}"
+echo -e "${GREEN}Squid Proxy Install Successfully.${NC}"
+echo -e "${NC}"
 sudo /usr/bin/htpasswd -b -c /etc/squid/passwd $usernamesquid $passwordsquid
-
+echo -e "${GREEN}Add Account ${usernamesquid}|${passwordsquid} Successfully.${NC}"
+sleep 1
 if readlink /proc/$$/exe | grep -q "dash"; then
 	echo 'This installer needs to be run with "bash", not "sh".'
 	exit
@@ -347,8 +353,7 @@ if [[ ! -e /etc/wireguard/wg0.conf ]]; then
 		apt-get install -y wget
 	fi
 	clear
-	echo 'Welcome to this WireGuard road warrior installer!'
-	# If system has a single IPv4, it is selected automatically. Else, ask the user
+	echo 'Start Install WireGuard!'
 	if [[ $(ip -4 addr | grep inet | grep -vEc '127(\.[0-9]{1,3}){3}') -eq 1 ]]; then
 		ip=$(ip -4 addr | grep inet | grep -vE '127(\.[0-9]{1,3}){3}' | cut -d '/' -f 1 | grep -oE '[0-9]{1,3}(\.[0-9]{1,3}){3}')
 	else
@@ -652,10 +657,8 @@ EOF
 	fi
 	echo
 	qrencode -t UTF8 < ~/"$client.conf"
-	echo -e '\xE2\x86\x91 That is a QR code containing the client configuration.'
+	echo -e '\xE2\x86\x91 Create QR Code Successfully'
 	echo
-	# If the kernel module didn't load, system probably had an outdated kernel
-	# We'll try to help, but will not force a kernel upgrade upon the user
 	if [[ ! "$is_container" -eq 0 ]] && ! modprobe -nq wireguard; then
 		echo "Warning!"
 		echo "Installation was finished, but the WireGuard kernel module could not load."
@@ -667,11 +670,9 @@ EOF
 			echo "Reboot the system to load the most recent kernel."
 		fi
 	else
-		echo "Finished!"
+		echo "Install Wireguard Successfully!"
 	fi
 	echo
-	echo "The client configuration is available in:" ~/"$client.conf"
-	echo "New clients can be added by running this script again."
 else
 	clear
 	echo "WireGuard is already installed."
