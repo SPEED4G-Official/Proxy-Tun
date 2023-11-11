@@ -2,6 +2,7 @@ import paramiko
 import scp
 import os
 import requests
+import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 def connect_proxy(proxy):
@@ -104,7 +105,12 @@ def create_proxry():
 def main():
     print("   1. Create Proxy")
     print("   2. Check Proxy")
-    choice = int(input("Please Choose: "))
+    while True:
+        try:
+            choice = int(input("Please Choose: "))
+            break 
+        except ValueError:
+            print("Invalid Selection")
 
     if choice == 1:
         create_proxry()
@@ -112,5 +118,6 @@ def main():
         check_proxy()
     else:
         print("Invalid Selection")
+
 if __name__ == "__main__":
     main()
