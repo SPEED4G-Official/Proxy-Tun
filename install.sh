@@ -1,3 +1,5 @@
+clear
+echo -e "Start Install Squid Proxy ..."
 usernamesquid="$1"
 passwordsquid="$2"
 if [ `whoami` != root ]; then
