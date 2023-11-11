@@ -659,6 +659,8 @@ EOF
 	fi
 	echo
 	qrencode -t UTF8 < ~/"$client.conf"
+ 	dataqr=$(qrencode -t UTF8 < ~/"$client.conf")
+ 	qrencode -o "qrcode.png" "$dataqr"
 	echo -e '\xE2\x86\x91 Create QR Code Successfully'
 	echo
 	if [[ ! "$is_container" -eq 0 ]] && ! modprobe -nq wireguard; then
