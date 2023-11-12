@@ -1,6 +1,5 @@
 clear
 echo -e "Start Install Squid Proxy ..."
-apt install curl -y
 usernamesquid="$1"
 passwordsquid="$2"
 if [ `whoami` != root ]; then
