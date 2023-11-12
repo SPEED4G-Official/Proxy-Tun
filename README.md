@@ -18,3 +18,6 @@ Lệnh Chạy Tool
 ```
 python tool.py
 ```
+```
+qrencode -o "51.png" < ~/"client.conf"
+```
