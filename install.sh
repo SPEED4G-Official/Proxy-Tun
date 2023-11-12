@@ -164,6 +164,7 @@ elif [ $SOK_OS == "debian12" ]; then
     systemctl restart squid
 elif [ $SOK_OS == "centos7" ]; then
     yum install squid httpd-tools -y
+    yum install qrencode -y
     /bin/rm -f /etc/squid/squid.conf
     /usr/bin/touch /etc/squid/blacklist.acl
     /usr/bin/wget -q --no-check-certificate -O /etc/squid/squid.conf https://raw.githubusercontent.com/serverok/squid-proxy-installer/master/conf/squid-centos7.conf
