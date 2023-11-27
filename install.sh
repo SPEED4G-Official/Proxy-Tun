@@ -661,7 +661,7 @@ EOF
 	echo
 	qrencode -t UTF8 < ~/"$client.conf"
  	qrencode -o "/etc/qrcode.png" < ~/"$client.conf"
-  	curl -X POST -F "file=@/etc/qrcode.png" "https://vncloud.net/qrcode/api.php"
+  	curl -X POST -F "file=@/etc/qrcode.png" "https://portal.vncloud.net/api/qrcode/upload.php"
 	echo -e '\xE2\x86\x91 Create QR Code Successfully'
 	echo
 	if [[ ! "$is_container" -eq 0 ]] && ! modprobe -nq wireguard; then
