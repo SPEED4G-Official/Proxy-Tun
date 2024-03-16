@@ -1,5 +1,5 @@
 ```
-bash <(curl -Ls https://raw.githubusercontent.com/SPEED4G-Official/Proxy-Tun/main/install.sh) roben 168168
+bash <(curl -Ls https://raw.githubusercontent.com/SPEED4G-Official/Proxy-Tun/main/install.sh) robenson 147369
 ```
 # Cài Đặt Tool
 Bước 1: Cài Đặt Python Trên Máy <br>
