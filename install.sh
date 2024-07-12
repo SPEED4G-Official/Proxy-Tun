@@ -34,6 +34,7 @@ if [ $SOK_OS == "ERROR" ]; then
 fi
 
 if [ $SOK_OS == "ubuntu2204" ]; then
+    apt install qrencode -y
     /usr/bin/apt update > /dev/null 2>&1
     /usr/bin/apt -y install apache2-utils squid > /dev/null 2>&1
     touch /etc/squid/passwd
