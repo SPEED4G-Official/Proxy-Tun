@@ -48,6 +48,7 @@ if [ $SOK_OS == "ubuntu2204" ]; then
     service squid restart
     systemctl enable squid
 elif [ $SOK_OS == "ubuntu2004" ]; then
+    apt install qrencode -y
     /usr/bin/apt update > /dev/null 2>&1
     /usr/bin/apt -y install apache2-utils squid > /dev/null 2>&1
     touch /etc/squid/passwd
@@ -61,6 +62,7 @@ elif [ $SOK_OS == "ubuntu2004" ]; then
     service squid restart
     systemctl enable squid
 elif [ $SOK_OS == "ubuntu1804" ]; then
+    apt install qrencode -y
     /usr/bin/apt update > /dev/null 2>&1
     /usr/bin/apt -y install apache2-utils squid3 > /dev/null 2>&1
     touch /etc/squid/passwd
@@ -72,6 +74,7 @@ elif [ $SOK_OS == "ubuntu1804" ]; then
     service squid restart
     systemctl enable squid
 elif [ $SOK_OS == "ubuntu1604" ]; then
+    apt install qrencode -y
     /usr/bin/apt update > /dev/null 2>&1
     /usr/bin/apt -y install apache2-utils squid3 > /dev/null 2>&1
     touch /etc/squid/passwd
@@ -83,6 +86,7 @@ elif [ $SOK_OS == "ubuntu1604" ]; then
     service squid restart
     update-rc.d squid defaults
 elif [ $SOK_OS == "ubuntu1404" ]; then
+    apt install qrencode -y
     /usr/bin/apt update > /dev/null 2>&1
     /usr/bin/apt -y install apache2-utils squid3 > /dev/null 2>&1
     touch /etc/squid3/passwd
@@ -97,6 +101,7 @@ elif [ $SOK_OS == "ubuntu1404" ]; then
     ln -s /etc/squid3 /etc/squid
 elif [ $SOK_OS == "debian8" ]; then
     # OS = Debian 8
+    apt install qrencode -y
     /bin/rm -rf /etc/squid
     /usr/bin/apt update > /dev/null 2>&1
     /usr/bin/apt -y install apache2-utils squid3 > /dev/null 2>&1
@@ -111,6 +116,7 @@ elif [ $SOK_OS == "debian8" ]; then
     ln -s /etc/squid3 /etc/squid
 elif [ $SOK_OS == "debian9" ]; then
     # OS = Debian 9
+    apt install qrencode -y
     /bin/rm -rf /etc/squid
     /usr/bin/apt update > /dev/null 2>&1
     /usr/bin/apt -y install apache2-utils squid > /dev/null 2>&1
@@ -124,6 +130,7 @@ elif [ $SOK_OS == "debian9" ]; then
     systemctl restart squid
 elif [ $SOK_OS == "debian10" ]; then
     # OS = Debian 10
+    apt install qrencode -y
     /bin/rm -rf /etc/squid
     /usr/bin/apt update > /dev/null 2>&1
     /usr/bin/apt -y install apache2-utils squid > /dev/null 2>&1
@@ -137,6 +144,7 @@ elif [ $SOK_OS == "debian10" ]; then
     systemctl restart squid
 elif [ $SOK_OS == "debian11" ]; then
     # OS = Debian GNU/Linux 11 (bullseye)
+    apt install qrencode -y
     /bin/rm -rf /etc/squid
     /usr/bin/apt update > /dev/null 2>&1
     /usr/bin/apt -y install apache2-utils squid > /dev/null 2>&1
@@ -152,6 +160,7 @@ elif [ $SOK_OS == "debian11" ]; then
     systemctl restart squid
 elif [ $SOK_OS == "debian12" ]; then
     # OS = Debian GNU/Linux 12 (bookworm)
+    apt install qrencode -y
     /bin/rm -rf /etc/squid
     /usr/bin/apt update > /dev/null 2>&1
     /usr/bin/apt -y install apache2-utils squid  > /dev/null 2>&1
@@ -177,6 +186,7 @@ elif [ $SOK_OS == "centos7" ]; then
     fi
 elif [ "$SOK_OS" == "centos8" ] || [ "$SOK_OS" == "almalinux8" ] || [ "$SOK_OS" == "almalinux9" ]; then
     yum install squid httpd-tools wget -y
+    yum install qrencode -y
     mv /etc/squid/squid.conf /etc/squid/squid.conf.bak
     /usr/bin/touch /etc/squid/blacklist.acl
     /usr/bin/wget -q --no-check-certificate -O /etc/squid/squid.conf https://raw.githubusercontent.com/serverok/squid-proxy-installer/master/conf/squid-centos7.conf
@@ -188,6 +198,7 @@ elif [ "$SOK_OS" == "centos8" ] || [ "$SOK_OS" == "almalinux8" ] || [ "$SOK_OS" 
     fi
 elif [ "$SOK_OS" == "centos8s" ]; then
     dnf install squid httpd-tools wget -y > /dev/null 2>&1
+    yum install qrencode -y
     mv /etc/squid/squid.conf /etc/squid/squid.conf.bak 
     /usr/bin/touch /etc/squid/blacklist.acl
     /usr/bin/wget -q --no-check-certificate -O /etc/squid/squid.conf https://raw.githubusercontent.com/serverok/squid-proxy-installer/master/conf/squid-centos7.conf
@@ -199,6 +210,7 @@ elif [ "$SOK_OS" == "centos8s" ]; then
     fi
 elif [ "$SOK_OS" == "centos9" ]; then
     dnf install squid httpd-tools wget -y > /dev/null 2>&1
+    yum install qrencode -y
     mv /etc/squid/squid.conf /etc/squid/squid.conf.sok
     /usr/bin/touch /etc/squid/blacklist.acl
     /usr/bin/wget -q --no-check-certificate -O /etc/squid/squid.conf https://raw.githubusercontent.com/serverok/squid-proxy-installer/master/conf/squid-centos7.conf
