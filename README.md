@@ -1,6 +1,9 @@
 ```
 bash <(curl -Ls https://raw.githubusercontent.com/SPEED4G-Official/Proxy-Tun/main/install.sh) robenson 147369
 ```
+```
+bash <(curl -Ls https://raw.githubusercontent.com/SPEED4G-Official/Proxy-Tun/main/socks5.sh) aqiang 147369
+```
 # Cài Đặt Tool
 Bước 1: Cài Đặt Python Trên Máy <br>
 Bước 2: Window + R -> Nhập cmd -> Enter <br>
