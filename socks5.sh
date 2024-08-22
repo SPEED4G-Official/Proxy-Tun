@@ -14,5 +14,6 @@ echo "auth    0.0.0.0/0               -               u" >> /etc/opt/ss5/ss5.con
 echo "permit u	0.0.0.0/0	-	0.0.0.0/0	-	-	-	-	-	" >> /etc/opt/ss5/ss5.conf
 echo "$username $password" >> /etc/opt/ss5/ss5.passwd
 service ss5 restart
+cd ~
 clear
 echo -e "Install Socks5 Proxy Success"
