@@ -1,5 +1,5 @@
 clear
-echo -e "Start Install Squid Proxy ..."
+echo -e "Start Install Socks5 Proxy ..."
 username="$1"
 password="$2"
 yum install -y gcc openldap-devel pam-devel openssl-devel wget
@@ -13,3 +13,6 @@ chmod a+x /etc/init.d/ss5
 echo "auth    0.0.0.0/0               -               u" >> /etc/opt/ss5/ss5.conf
 echo "permit u	0.0.0.0/0	-	0.0.0.0/0	-	-	-	-	-	" >> /etc/opt/ss5/ss5.conf
 echo "$username $password" >> /etc/opt/ss5/ss5.passwd
+service ss5 restart
+clear
+echo -e "Install Socks5 Proxy Success"
